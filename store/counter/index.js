@@ -9,12 +9,14 @@ export const state = () => ({
 })
 
 //Mutations / Setters
+// State should be mutated in mutations
 export const mutations = {
     setCount: (state, data) => (state.count += data), //setters -> set state
     setData: (state, data) => (state.data = data), //setters -> set state
 }
 
 //Actions
+// API request should be in an action
 export const actions = {
     counter({commit, state}, payload) {
         commit('setCount', 1)
@@ -26,6 +28,7 @@ export const actions = {
 };
 
 //Getters
+// Getters should be used to deliver the state
 export const getters = {
     getCounter: (state) => state.count, //getters -> get state
     getUsers: (state) => state.data, //getters -> get state

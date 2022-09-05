@@ -24,6 +24,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     {src: '@/plugins/antd-ui', ssr: true},
+    {src: '@/plugins/stripe-element.js', ssr: false},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -76,6 +77,10 @@ export default {
 
   axios: {
     baseUrl: 'http://127.0.0.1:8000'
+  },
+
+  publicRuntimeConfig: {
+    STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
   },
 
   router: {
