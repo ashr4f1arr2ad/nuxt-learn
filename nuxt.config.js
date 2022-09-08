@@ -80,7 +80,9 @@ export default {
   },
 
   publicRuntimeConfig: {
-    STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
+    stripe: {
+      STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
+    }
   },
 
   router: {
