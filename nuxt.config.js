@@ -39,7 +39,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    '@nuxtjs/toast',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -73,6 +74,22 @@ export default {
       home: '/'
     },
     restOnError: true
+  },
+
+  toast: {
+    position: "bottom-right",
+    theme: "bubble",
+    duration: 2000,
+    register: [
+      // Register custom toasts
+      {
+        name: "my-error",
+        message: "Oops...Something went wrong",
+        options: {
+          type: "error",
+        },
+      },
+    ],
   },
 
   axios: {

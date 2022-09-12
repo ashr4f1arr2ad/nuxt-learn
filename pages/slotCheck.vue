@@ -1,19 +1,10 @@
 <template>
     <div class="container" ref="c">
-        <!-- Ref use to select whole html like ul to ul last tag -->
-        <ul>
-            <li v-for="item in data" ref="l">
-                {{ item }}
-            </li>
-        </ul>
-        <p ref="p">Hello</p>
-        <!-- or single p -->
-
       <!-- Slot works like a props -->
       <div id="app">
         <div class="row">
           <div class="col">
-            <h4 class="text-center" @click="getRefs">Using Vue.js Slots</h4>
+            <h4 class="text-center">Using Vue.js Slots</h4>
             <p>
               This code sample shows how to use slots in vue.js and use html details tag to show popup. In addition, the reusable component also emits
               <mark>popup-toggled</mark> custom event which can be handled by parent component.
@@ -46,18 +37,8 @@
           name: "Todo",
           archived: false
         },
-        data: [1, 2, 3]
       };
     },
-    methods: {
-        getRefs() {
-            console.log(this.$refs.c);
-            console.log(this.$refs.p);
-        }
-    },
-    mounted() {
-        console.log(this.$refs.l)
-    }
   };
   </script>
   
